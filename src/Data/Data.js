@@ -1,7 +1,6 @@
 // Sidebar imports
 import {
   UilEstate,
-  UilClipboardAlt,
   UilCalendarAlt,
   UilHospital,
   UilPrescriptionBottle,
@@ -10,10 +9,6 @@ import {
   UilFileCheckAlt,
   UilClock
 } from "@iconscout/react-unicons";
-
-// Analytics Cards imports
-// import { UilUsdSquare, UilMoneyWithdrawal } from "@iconscout/react-unicons";
-// import { keyboard } from "@testing-library/user-event/dist/keyboard";
 
 // Recent Card Imports
 import img1 from "../imgs/img1.png";
@@ -40,7 +35,7 @@ export const SidebarData = [
   {
     icon: UilHospital,
     heading: 'Departements',
-    url: '/departements'
+    url: '/departments'
   },
   {
     icon: UilPrescriptionBottle,
@@ -104,8 +99,8 @@ export const cardsData = [
     title: "Pending",
     color: {
       backGround:
-        "linear-gradient(rgb(248, 212, 154) -146.42%, rgb(255 202 113) -46.42%)",
-      boxShadow: "0px 10px 20px 0px #F9D59B",
+        "linear-gradient(95deg, rgba(36,26,205,1) 0%, rgba(156,205,196,1) 0%)",
+      boxShadow: "0px 10px 20px 0px #66d9c5",
     },
     barValue: 60,
     value: "4,270",

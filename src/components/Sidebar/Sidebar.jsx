@@ -5,13 +5,20 @@ import { UilBars, UilSignOutAlt } from '@iconscout/react-unicons'
 import Logo from '../../imgs/logo.png'
 import { SidebarData } from '../../Data/Data'
 import './sidebar.css'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation ,useNavigate } from 'react-router-dom'
+import Cookies from 'js-cookie'
 
 const Sidebar = () => {
-    const [selected, setSelected] = useState(0);
     const [expanded, setExpanded] = useState(true);
 
+    const navigate = useNavigate();
     const location = useLocation();
+
+    const handleLogout = () =>{
+        Cookies.remove('access_token')
+        navigate('/login')
+    }
+
     const sidebarVariants = {
         true: {
             left: '0'
@@ -52,7 +59,7 @@ const Sidebar = () => {
                         );
                     })}
                     {/* Signout Icon */}
-                    <div className="menuItem">
+                    <div className="menuItem" onClick={handleLogout}>
                         <UilSignOutAlt />
                     </div>
                 </div>

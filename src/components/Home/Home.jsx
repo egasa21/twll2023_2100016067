@@ -1,7 +1,7 @@
 import React from 'react'
 import Cards from '../Cards/Cards'
 import Sidebar from '../Sidebar/Sidebar'
-import Table from '../Table/Table'
+// import Table from '../Table/Table'
 import './home.css'
 import '../../App.css'
 
@@ -13,7 +13,7 @@ const Home = () => {
                 <h1>Dashboard</h1>
                 <div className="Home">
                     <Cards />
-                    <Table />
+                    {/* <Table /> */}
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import '../../App.css'
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { SidebarData } from '../../Data/Data';
 import Table from '../../components/Table/Table'
 import './lists.css'
@@ -34,9 +34,9 @@ const Lists = () => {
       <div className="List">
         <h1>{title}</h1>
         <div className="container">
-          <button>Add <span></span></button>
+          <button><Link to={`${location.pathname}/new`} style={{ textDecoration: 'none' }}>Add</Link> <span></span></button>
         </div>
-          <Table />
+        <Table />
       </div>
     </div>
   )
