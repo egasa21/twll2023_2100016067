@@ -23,7 +23,7 @@ const New = () => {
         const fetchDepartments = async () => {
             const token = Cookies.get('access_token')
             try {
-                const response = await axios.get(`http://localhost:5000/api/departments`, {
+                const response = await axios.get(`https://api.egasaputra.cloud/api/departments`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -53,7 +53,7 @@ const New = () => {
             formData.append('department', selectedDepartment);
 
             const token = Cookies.get('access_token');
-            const response = await axios.post('http://localhost:5000/api/doctors/', formData, {
+            const response = await axios.post('https://api.egasaputra.cloud/api/doctors/', formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     'Content-Type': 'multipart/form-data',

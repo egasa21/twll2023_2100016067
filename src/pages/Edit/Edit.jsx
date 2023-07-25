@@ -25,7 +25,7 @@ const Edit = () => {
         const fetchDepartments = async () => {
             const token = Cookies.get('access_token')
             try {
-                const response = await axios.get(`http://localhost:5000/api/departments`, {
+                const response = await axios.get(`https://api.egasaputra.cloud/api/departments`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -40,7 +40,7 @@ const Edit = () => {
         const fetchDoctorData = async () => {
             const token = Cookies.get('access_token');
             try {
-                const response = await axios.get(`http://localhost:5000/api/doctors/${id}`, {
+                const response = await axios.get(`https://api.egasaputra.cloud/api/doctors/${id}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -88,14 +88,14 @@ const Edit = () => {
             let response;
 
             if (id) {
-                response = await axios.put(`http://localhost:5000/api/doctors/${id}`, formData, {
+                response = await axios.put(`https://api.egasaputra.cloud/api/doctors/${id}`, formData, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                         'Content-Type': 'multipart/form-data',
                     },
                 });
             } else {
-                response = await axios.post('http://localhost:5000/api/doctors/', formData, {
+                response = await axios.post('https://api.egasaputra.cloud/api/doctors/', formData, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                         'Content-Type': 'multipart/form-data',

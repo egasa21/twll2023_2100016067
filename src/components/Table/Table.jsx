@@ -14,7 +14,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 export default function BasicTable() {
   const [data, setData] = useState([]);
   const location = useLocation();
-  const backendURL = 'http://localhost:5000';
+  const backendURL = 'https://api.egasaputra.cloud';
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function BasicTable() {
       try {
         const token = Cookies.get('access_token');
         if (token) {
-          const response = await axios.get(`http://localhost:5000/api${location.pathname}`, {
+          const response = await axios.get(`https://api.egasaputra.cloud/api${location.pathname}`, {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -114,8 +114,8 @@ export default function BasicTable() {
                     style={makeStyle(row[header])}
                   >
                     {header === 'imgUrl' ? (
-                      <img src={`http://localhost:5000/api/images/${row[header]}`} alt="Doctor" style={{ width: '100px' }} />
-                      // http://localhost:5000/api/images/33d3c2bd4ba506f53dc9b2ed41a1251e.png
+                      <img src={`https://api.egasaputra.cloud/api/images/${row[header]}`} alt="Doctor" style={{ width: '100px' }} />
+                      // https://api.egasaputra.cloud/api/images/33d3c2bd4ba506f53dc9b2ed41a1251e.png
                     ) : (
                       row[header] && typeof row[header] === 'object' ? row[header].name : row[header]
                     )}
